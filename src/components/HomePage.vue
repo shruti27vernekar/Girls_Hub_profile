@@ -1,65 +1,57 @@
 <template>
-  <div class = "body">
-      <div class="title">
-        <h1>Engage with our xGirls</h1>
-        <h4>Unlock your favorite adult model videos and photos</h4>
-        <button class="btn">Show models</button>
+  <div>
+    <HeaderPage />
+    <div class=" bg-gray-900 h-80 flex justify-evenly">
+      <div class="py-30 pl-20">
+        <h2 class="text-5xl text-white py-6">Engage with our xGirls</h2>
+        <p class="text-2xl text-violet-800 py-0 w-1/2">
+          Unlock your favorite adult model videos and photos
+        </p>
+        <button class="bg-pink-600 text-black h-10 pt-2 px-3 rounded-2xl py-3 my-4">
+          Show models
+        </button>
       </div>
+      <div class="flex items-center">
+        <img src="../assets/Red Kitty.png" class="w-40" />
+      </div>
+    </div>
+  
+<div v-for="index in 3" :key="index">
+    <div class=" bg-gray-900 flex -m-4 py-10 px-60">
       
+      <div v-for="product in products" :key="product.title" class="relative" >
+        <div class=" rounded-lg overflow-hidden  ">
+          <img v-bind:src="product.src" class=" lg:h-80 md:h-40 px-5 " />
+        </div>
+        <div class="absolute  bottom-0  border-black-500 lg:h-20 md:h-10  px-10 text-jestify text-white">
+          <h2 >{{ product.name }}</h2>
+          <h4>{{ product.content }}</h4>
+        </div>
+      </div>
+      </div>
+    </div>
+    <ReviewData />
+    <FooterPage />
   </div>
 </template>
 
 <script>
+import HeaderPage from './Header.vue'
+import ReviewData from './Review.vue'
+import FooterPage from './Footer.vue'
+
+
 export default {
-  name: 'HomePage',
-  
-}
+  name: "HomePage",
+  components: {
+     HeaderPage,
+     ReviewData,
+     FooterPage
+  },
+  props: ["products"],
+
+  data() {
+    return {};
+  },
+};
 </script>
-
-<style>
-    body{
-        background: #181818;
-    }
-    .title {
-      width: 612px;
-      height: 250px;
-      width: 100%;
-      margin-left: 60px;
-    }
-    h1{
-         position: relative;
-        font-family: 'Clash Display';
-        font-style: normal;
-        font-weight: 400;
-        font-size: 60px;
-        line-height: 118px;
-        color: #EEF2F7;
-    }
-
-    h4{
-      width: 601px;
-      top: 495px;
-      font-family: 'Clash Display';
-      font-style: normal;
-      font-weight: 400;
-      font-size: 24px;
-      line-height: 90%;
-      font-feature-settings: 'pnum' on, 'lnum' on;
-      color: #6E5E81;
-    }
-
-    .btn {
-          width: 100px;
-          height: 40px;
-          font-family: 'Clash Grotesk';
-          font-style: normal;
-          font-weight: 500;
-          font-size: 10px;
-          line-height: 10px;
-          letter-spacing: 1px;
-          flex: none;
-          order: 0;
-          flex-grow: 0;
-           border-radius: 10px;
-    }
-</style>

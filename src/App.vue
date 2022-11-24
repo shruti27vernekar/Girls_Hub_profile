@@ -1,34 +1,18 @@
 <template>
-  <div id="app">
-    
-    <HeaderPage />
-    <HomePage />
-    <CardProfile />
-    <ReviewData />
-    <FooterPage />
-    
+  <div id="app" >
+    <!-- <router-view></router-view> -->
+    <ProfileCard />
   </div>
 </template>
 
 <script>
-    import HeaderPage from './components/Header.vue'
-    import HomePage from './components/HomePage.vue'
-    import CardProfile from './components/Card.vue'
-    import ReviewData from './components/Review.vue'
-    import FooterPage from './components/Footer.vue'
+  import ProfileCard from './components/Card.vue'
 
 export default {
   name: 'App',
   components: {
-    HeaderPage,
-    HomePage,
-    CardProfile,
-    ReviewData,
-    FooterPage
+    ProfileCard
   }
 }
 </script>
 
-<style>
-
-</style>
